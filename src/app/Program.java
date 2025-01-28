@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import db.DB;
+import entities.Product;
 
 public class Program {
 
@@ -22,7 +23,14 @@ public class Program {
 		
 		//enquanto houver dado ele mostra
 		while (rs.next()) {
-			System.out.println(rs.getLong("Id") + ", " + rs.getString("Name"));
+			Product p = new Product();
+			p.setId(rs.getLong("id"));
+			p.setName(rs.getString("name"));
+			p.setPrice(rs.getDouble("price"));
+			p.setDescription(rs.getString("description"));
+			p.setImageUri(rs.getString("image_uri"));
+			
+			System.out.println(p);
 		}
 	}
 }
