@@ -23,14 +23,19 @@ public class Program {
 		
 		//enquanto houver dado ele mostra
 		while (rs.next()) {
-			Product p = new Product();
-			p.setId(rs.getLong("id"));
-			p.setName(rs.getString("name"));
-			p.setPrice(rs.getDouble("price"));
-			p.setDescription(rs.getString("description"));
-			p.setImageUri(rs.getString("image_uri"));
+			Product p = instantiateProduct(rs);
 			
 			System.out.println(p);
 		}
+	}
+	
+	private static Product instantiateProduct(ResultSet rs) throws SQLException{
+		Product p = new Product();
+		p.setId(rs.getLong("id"));
+		p.setName(rs.getString("name"));
+		p.setPrice(rs.getDouble("price"));
+		p.setDescription(rs.getString("description"));
+		p.setImageUri(rs.getString("image_uri"));
+		return p;
 	}
 }
