@@ -1,6 +1,6 @@
 # Revisão de OO e SQL
 
-## Nesta aula vamos revisar
+## Assuntos que serão revisados
 - Chave primária, chave estrangeira
 - DDL (create table, alter table)
 - SQL
