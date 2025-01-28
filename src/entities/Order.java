@@ -12,7 +12,7 @@ public class Order {
 	private Instant moment;
 	private OrderStatus status;
 	
-	//permite a associação
+	//permite a associação (Composição de objetos)
 	private List<Product> products = new ArrayList<>();
 
 	
@@ -60,6 +60,15 @@ public class Order {
 
 	public List<Product> getProducts() {
 		return products;
-	}	
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", latitude=" + latitude + ", longitude=" + longitude + ", moment=" + moment
+				+ ", status=" + status + "]";
+	}
+
+		
 	
 }
